@@ -1,14 +1,17 @@
 ﻿using System.Threading.Tasks;
+using CustomTransitions.Services;
 using Xamarin.Forms;
 
 namespace CustomTransitions.Base
 {
     public class BasePage : ContentPage, IAnimatedPage
     {
+        protected readonly INavigationService navigationService;
         private bool appearingAnimationDone;
 
         public BasePage()
         {
+            navigationService = DependencyService.Get<INavigationService>();
         }
 
         protected override async void OnAppearing()
@@ -28,40 +31,30 @@ namespace CustomTransitions.Base
         private async Task RuniOSAppearingAnimationAsync()
         {
             if (!appearingAnimationDone)
-            {
-                appearingAnimationDone = true;
                 await RunAppearingAnimationAsync();
-            }
         }
 
         private async Task RunAndroidAppearingAnimationAsync(double width, double height)
         {
             if (!appearingAnimationDone && width > 0 && height > 0)
-            {
-                appearingAnimationDone = true;
                 await RunAppearingAnimationAsync();
-            }
-        }
-
-        protected override void OnDisappearing()
-        {
-            appearingAnimationDone = false;
-            base.OnDisappearing();
         }
 
         protected override bool OnBackButtonPressed()
         {
-            //TODO
+            navigationService.NavigateBack();
             return true;
         }
 
         public virtual Task RunAppearingAnimationAsync()
         {
+            appearingAnimationDone = true;
             return Task.CompletedTask;
         }
 
         public virtual Task RunDisappearingAnimationAsync()
         {
+            appearingAnimationDone = false;
             return Task.CompletedTask;
         }
     }

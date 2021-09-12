@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using CustomTransitions.Base;
-using CustomTransitions.Services;
 using Xamarin.Forms;
 
 namespace CustomTransitions.Features
@@ -8,11 +7,9 @@ namespace CustomTransitions.Features
     public partial class FirstPage : IAnimatedPage
     {
         private const double X_TRANSLATION = 500;
-        private readonly INavigationService navigationService;
 
         public FirstPage()
         {
-            navigationService = DependencyService.Get<INavigationService>();
             InitializeComponent();
             lbName.TranslationX = X_TRANSLATION;
             lbJob.TranslationX = X_TRANSLATION;
