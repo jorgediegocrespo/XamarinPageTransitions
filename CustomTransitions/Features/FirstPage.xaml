@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<base:BasePage
+    xmlns:base="clr-namespace:CustomTransitions.Base"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="CustomTransitions.Features.FirstPage"
+    ios:Page.UseSafeArea="true">
+    <Grid x:Name="gridContent"
+          RowDefinitions="50,50,100,*" ColumnDefinitions="100,*"
+          RowSpacing="0" ColumnSpacing="0"
+          Padding="20,40">
+
+        <Frame x:Name="frImage" Grid.RowSpan="2"
+               CornerRadius="50"
+               HasShadow="False"
+               IsClippedToBounds="True"
+               Padding="0" Opacity="0"
+               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image Source="https://jorgediegocrespo.files.wordpress.com/2019/11/iphonesafearea-e1574276852279.jpg"
+                   Aspect="AspectFill"
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </Frame>
+
+        <Label x:Name="lbName" Grid.Column="1"
+               Text="JORGE DIEGO CRESPO"
+               FontAttributes="Bold" FontSize="20"
+               Margin="10,0,0,0"
+               VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+
+        <Label x:Name="lbJob" Grid.Row="1" Grid.Column="1"
+               Text="Xamarin developer"
+               FontSize="16" TextColor="Gray"
+               Margin="10,0,0,0"
+               VerticalTextAlignment="Start" HorizontalOptions="Start"/>
+
+        <Button x:Name="btDetail" Grid.Row="2" Grid.ColumnSpan="2"
+                Text="Details"
+                TextColor="White" BackgroundColor="Black"
+                CornerRadius="25"
+                HeightRequest="50" WidthRequest="200"
+                Scale="0"
+                HorizontalOptions="Center" VerticalOptions="Center"
+                Clicked="btDetail_Clicked"/>
+        
+    </Grid>
+</base:BasePage>

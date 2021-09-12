@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<base:BasePage
+    xmlns:base="clr-namespace:CustomTransitions.Base"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="CustomTransitions.Features.SecondPage"
+    ios:Page.UseSafeArea="true">
+    <Grid x:Name="gridContent"
+          RowDefinitions="100,*,100" ColumnDefinitions="0,100,*"
+          RowSpacing="0" ColumnSpacing="0"
+          Padding="20,40">
+
+        <Frame x:Name="frImage" Grid.Column="1"
+               CornerRadius="50"
+               HasShadow="False"
+               IsClippedToBounds="True"
+               Padding="0" 
+               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image Source="https://jorgediegocrespo.files.wordpress.com/2019/11/iphonesafearea-e1574276852279.jpg"
+                   Aspect="AspectFill"
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </Frame>
+
+        <StackLayout x:Name="slInfo"
+                     Grid.Row="1" Grid.ColumnSpan="3"
+                     Margin="0,20,0,0"
+                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <Label x:Name="lbName" 
+                   VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="NAME: " FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                        <Span Text="Jorge Diego Crespo" FontSize="18" TextColor="Gray"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label x:Name="lbBirth" 
+                   VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="DATE OF BIRTH: " FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                        <Span Text="29/11/1985" FontSize="18" TextColor="Gray"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label x:Name="lbAddress" 
+                   VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="ADDRESS: " FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                        <Span Text="Xamarin Street, 5" FontSize="18" TextColor="Gray"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label x:Name="lbCity" 
+                   VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="CITY: " FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                        <Span Text="Madrid" FontSize="18" TextColor="Gray"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label x:Name="lbCountry" 
+                   VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="COUNTRY: " FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                        <Span Text="Spain" FontSize="18" TextColor="Gray"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label x:Name="lbJob" 
+                   VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="JOB: " FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                        <Span Text="Xamarin developer" FontSize="18" TextColor="Gray"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </StackLayout>
+
+        <Button x:Name="btBack" Grid.Row="2" Grid.ColumnSpan="3"
+                Text="Go back"
+                TextColor="White" BackgroundColor="Black"
+                CornerRadius="25"
+                HeightRequest="50" WidthRequest="200"
+                Scale="0"
+                HorizontalOptions="Center" VerticalOptions="Center"
+                Clicked="btBack_Clicked"/>
+        
+    </Grid>
+</base:BasePage>
